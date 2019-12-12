@@ -16,7 +16,7 @@ export default function Recipe(props) {
 	return (
 		<section className="recipe">
 			<div className="recipe-header">
-				<h3 className="recipe-tititle">{name}</h3>
+				<h3 className="recipe-title">{name}</h3>
 				<div>
 					<button className="btn btn-primary mr-1">Edit</button>
 					<button className="btn btn-danger">Delete</button>
