@@ -1,12 +1,15 @@
-import React, { Component } from 'react'
+import React, { useContext } from 'react'
 import IngredientList from './IngredientList'
+import { RecipeContext } from './App'
 
 //基於我們對於import的理解，我們理解到React是React library的default class，
 //而component並非default，而是react的附屬function。
 //我們理解到api的真正意涵，即是他人寫好的functions名稱。
 
 export default function Recipe(props) {
+	const { handleRecipeDelete } = useContext(RecipeContext)
 	const {
+		id,
 		name,
 		cookTime,
 		servings,
@@ -15,29 +18,35 @@ export default function Recipe(props) {
 	} = props
 	return (
 		<section className="recipe">
-			<div className="recipe-header">
-				<h3 className="recipe-title">{name}</h3>
+			<div className="recipe--header">
+				<h3 className="recipe--title">{name}</h3>
 				<div>
-					<button className="btn btn-primary mr-1">Edit</button>
-					<button className="btn btn-danger">Delete</button>
+					<button className="btn btn--primary mr-1">Edit</button>
+					<button
+						onClick={() => handleRecipeDelete(id)}
+						className="btn btn--danger">
+						Delete
+					</button>
 				</div>
 			</div>
 
-			<div>
-				<span>Cook Time:</span>
-				<span> {cookTime}</span>
+			<div className="recipe--row">
+				<span className="recipe--label">Cook Time:</span>
+				<span className="recipe--value"> {cookTime}</span>
 			</div>
-			<div>
-				<span>Servings:</span>
-				<span> {servings}</span>
+			<div className="recipe--row">
+				<span className="recipe--label">Servings:</span>
+				<span className="recipe--value"> {servings}</span>
 			</div>
-			<div>
-				<span>Instructions:</span>
-				<div> {instructions}</div>
+			<div className="recipe--row">
+				<span className="recipe--label">Instructions:</span>
+				<div className="recipe--value recipe__instructions recipe--value__indented"> {instructions}</div>
 			</div>
-			<div>
-				<span>Ingredients:</span>
-				<IngredientList ingredients={ingredients} />
+			<div className="recipe--row">
+				<span className="recipe--label">Ingredients:</span>
+				<div className="recipe--value recipe--value__indented">
+					<IngredientList ingredients={ingredients} />
+				</div>
 			</div>
 		</section>
 	)
