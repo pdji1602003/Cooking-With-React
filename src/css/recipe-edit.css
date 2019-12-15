@@ -1,0 +1,69 @@
+.recipe--edit {
+	padding: 30px;
+	padding-top: 10px;
+	position: fixed;
+	right: 0;
+	top:0;
+	width: 50%;
+	max-height: 100%;
+	overflow-y: auto;
+}
+
+.recipe--edit__remove-button-container {
+	text-align: end;
+}
+
+.recipe-edit__remove-button{
+	padding: 0;
+	background: none;
+	outline: none;
+	border: none;
+	font-size: 1.5rem;
+}
+
+.recipe--edit__details-grid {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	row-gap: 10px;
+	column-gap:40px;
+}
+
+.recipe--edit_label {
+	font-weight: bold;
+}
+
+.recipe--edit_input {
+	padding: 5px 10px;
+	border:1px solid black;
+	border-radius: 5px;
+	font-size: inherit;
+	outline: none;
+	width: 100%;
+}
+
+textarea.recipe--edit_input {
+	height: 200px;
+	resize: none; 
+}
+
+.recipe--edit_ingredient-grid{
+	display: grid;
+	/* auto的意思是請元素按自身寬度進行評估後，自行決定要佔營幕版面的寬度*/
+	grid-template-columns: repeat(3, auto);
+	gap: 10px;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+.recipe-edit__add-ingredient-btn-container {
+	margin-top: 20px;
+	text-align: center;
+}
+
+@media (max-width:1000px){
+	.recipe-edit__details-grid,
+  .recipe-edit__ingredient-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

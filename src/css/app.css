@@ -4,6 +4,7 @@
 @import 'recipe-list.css';
 @import 'ingredient-list.css';
 @import 'recipe.css';
+@import 'recipe-edit.css';
 
 *, *::before, *::after {
 	box-sizing: border-box;
