@@ -7,7 +7,7 @@ import { RecipeContext } from './App'
 //我們理解到api的真正意涵，即是他人寫好的functions名稱。
 
 export default function Recipe(props) {
-	const { handleRecipeDelete } = useContext(RecipeContext)
+	const { handleRecipeDelete, handleRecipeSelect } = useContext(RecipeContext)
 	const {
 		id,
 		name,
@@ -21,7 +21,11 @@ export default function Recipe(props) {
 			<div className="recipe--header">
 				<h3 className="recipe--title">{name}</h3>
 				<div>
-					<button className="btn btn--primary mr-1">Edit</button>
+					<button 
+						onClick={() => handleRecipeSelect(id)}
+						className="btn btn--primary mr-1">
+						Edit
+					</button>
 					<button
 						onClick={() => handleRecipeDelete(id)}
 						className="btn btn--danger">
