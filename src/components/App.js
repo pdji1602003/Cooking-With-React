@@ -25,7 +25,8 @@ export default function App(props) {
 	const recipeContextValue = {
 		handleRecipeAdd, 
 		handleRecipeDelete, 
-		handleRecipeSelect
+		handleRecipeSelect,
+		handleRecipeChange
 	}
 
 	function handleRecipeSelect(id){
@@ -51,6 +52,13 @@ export default function App(props) {
 		setRecipes([...recipes, newRecipe])
 	}
 
+	function handleRecipeChange(id, recipe){
+		const newRecipes = [...recipes]
+		const index = newRecipes.findIndex(r => r.id === id)
+		newRecipes[index] = recipe
+		setRecipes(newRecipes)
+	}
+
 	function handleRecipeDelete(id) {
 		setRecipes(recipes.filter(recipe => recipe.id !== id))
 	}
@@ -71,7 +79,7 @@ const sampleRecipes = [
 		name: 'Plain Chicken',
 		cookTime: '1:45',
 		servings: 3,
-		instructions: "1. Put salt on chicken\n 2. Put chicken in oven\n3. Eat chicken",
+		instructions: "1. Put salt on chicken\n2. Put chicken in oven\n3. Eat chicken",
 		ingredients: [
 			{
 				id: 1,
@@ -90,7 +98,7 @@ const sampleRecipes = [
 		name: 'Plain Pork',
 		cookTime: '0:45',
 		servings: 5,
-		instructions: "1. Put paprika on pork\n 2. Put pork in oven\n3. Eat pork",
+		instructions: "1.Put paprika on pork\n2.Put pork in oven\n3.Eat pork",
 		ingredients: [
 			{
 				id: 1,
