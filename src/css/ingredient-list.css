@@ -1,7 +1,10 @@
 .ingredient-grid {
 	display: grid;
+	/* 調用repeat函數，按auto寬度重複2次＝>基本上就是切分兩欄的意思 */
 	grid-template-columns: repeat(2, auto);
 	row-gap: 5px;
-	column-gap: 40px;
+	column-gap: 30px;
+	/* grid-item自左邊開始排列起 */
 	justify-content: flex-start;
+	margin-left: 20px;
 }
