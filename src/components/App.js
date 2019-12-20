@@ -17,7 +17,8 @@ export default function App() {
 		handleAddRecipe,
 		handleDeleteRecipe, 
 		handleSelectRecipe, 
-		handleDeleteButton
+		handleDeleteButton, 
+		handleChangeRecipe
 	}
 
 	useEffect(() => {
@@ -49,11 +50,11 @@ export default function App() {
 			]
 		}
 
+		setSelectedRecipeId(newRecipe.id)
 		setRecipes([...recipes, newRecipe])
 	}
 
 	function handleDeleteRecipe(id) {
-		console.log(id)
 		setRecipes(recipes.filter(recipe => recipe.id !== id))
 	}
 
@@ -65,8 +66,8 @@ export default function App() {
 		const newRecipes = [...recipes]
 		const index = newRecipes.findIndex( r => r.id === id)
 		newRecipes[index] = recipe
+		setRecipes(newRecipes)
 	}
-		
 		
 
 	return (
