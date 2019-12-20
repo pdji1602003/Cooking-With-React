@@ -61,6 +61,14 @@ export default function App() {
 		setSelectedRecipeId(undefined)
 	}
 
+	function handleChangeRecipe(id, recipe){
+		const newRecipes = [...recipes]
+		const index = newRecipes.findIndex( r => r.id === id)
+		newRecipes[index] = recipe
+	}
+		
+		
+
 	return (
 		<RecipeContext.Provider value={recipeContextValue}>
 			<RecipeList
