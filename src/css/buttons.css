@@ -1,7 +1,7 @@
 .btn {
   padding: 16px 30px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: .9rem;
   background: none;
   outline: none;
   border: none;
@@ -38,4 +38,10 @@
 
 .btn-danger:focus {
   transform:translateY(0);
+}
+
+@media all and (max-width:768px){
+  .btn {
+    padding: 1em;
+  }
 }

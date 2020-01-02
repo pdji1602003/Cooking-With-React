@@ -15,7 +15,7 @@
 
 .recipe-title {
 	margin: 20px 0;
-	font-size: 1.75rem;
+	font-size: 1.7rem;
 }
 
 .recipe-row {
@@ -29,14 +29,18 @@
 	margin-right: 5px;
 }
 
-/* .recipe-value {
-	font-weight: 300;	
-} */
-
 .recipe-value_indented {
 	margin-left: 20px;
 }
 
 .recipe-value-instruction {
 	white-space: pre-line;
+}
+
+@media all and (max-width:768px){
+	.recipe-header-btn {
+		display: inline-flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 }
