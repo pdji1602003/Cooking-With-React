@@ -22,6 +22,8 @@
 	grid-template-columns: auto 1fr;
 	row-gap:20px;
 	column-gap: 40px;
+	padding-right: .5rem;
+	padding-bottom: .5rem;
 	font-size: 1.4rem;
 	font-weight: 500;
 }
@@ -34,8 +36,9 @@
 .recipe-edit_input {
 	padding: 6px 8px;
 	font-size: inherit;
-	border: 2px solid rgba(47, 47, 47, 0.5);
-	border-radius: 6px;
+	border: none;
+	border-radius: .5rem;
+	box-shadow:0 .2rem .5rem 0.5px rgba(255, 185, 36,.6);
 	outline: none;
 }
 
@@ -48,7 +51,7 @@
 	display: grid;	
 	grid-template-columns: repeat(3, auto);
 	grid-gap: 12px;
-	padding: 1rem;
+	padding: 1rem .5rem;
 }
 
 .recipe_edit_ingredient-heading {
@@ -56,6 +59,13 @@
 }
 
 .recipe-edit_add-ingredient-btn-container {
-	margin-top: 20px;
+	padding: 1rem;
 	text-align: center;
+}
+
+
+@media all and (max-width: 768px){
+	.recipe-edit {
+		width: 100%;
+	}
 }

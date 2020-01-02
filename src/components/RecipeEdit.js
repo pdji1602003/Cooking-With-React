@@ -46,7 +46,7 @@ export default function RecipeEdit({ recipe }) {
 				</button>
 			</div>
 			<div className="recipe-edit_ingredient-grid">
-				<label className="recipe-edit_label" htmlFor="name">Name</label>
+				<label className="recipe-edit_label" htmlFor="name">Recipe Name</label>
 				<input
 					className="recipe-edit_input"
 					type="text"
