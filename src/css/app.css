@@ -27,3 +27,9 @@ body {
 .mb-1 {
 	margin-bottom: .5rem;
 }
+
+@media all and (max-width:768px){
+	html {
+		font-size: 14px;
+	}
+}
