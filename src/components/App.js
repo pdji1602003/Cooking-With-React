@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import RecipeHeader from './RecipeHeader'
 import RecipeList from './RecipeList'
 import RecipeEdit from './RecipeEdit'
 import '../css/app.css'
@@ -12,6 +13,7 @@ export default function App() {
 	const [recipes, setRecipes] = useState(sampleRecipes)
 	const [selectedRecipeId, setSelectedRecipeId] = useState()
 	const selectedRecipe = recipes.find(recipe => recipe.id === selectedRecipeId)
+	const [searchResult, setSearchResult] = useState([])
 
 	const recipeContextValue = {
 		handleAddRecipe,
@@ -68,10 +70,24 @@ export default function App() {
 		newRecipes[index] = recipe
 		setRecipes(newRecipes)
 	}
-		
+
+	// for searchBar feature
+	function handleSearchRecipe(e){
+		const searchedRecipe = recipes.filter(recipe => {
+			return recipe.name.toLowerCase().search(e.target.value.toLowerCase()) !== -1
+		})
+
+		console.log(searchedRecipe);
+
+		setSearchResult(searchedRecipe)
+	}
 
 	return (
 		<RecipeContext.Provider value={recipeContextValue}>
+			<RecipeHeader
+				handleSearchRecipe={handleSearchRecipe}
+				searchResult={searchResult}
+			/>
 			<RecipeList
 				recipes={recipes}
 				handleDeleteRecipe={handleDeleteRecipe}
