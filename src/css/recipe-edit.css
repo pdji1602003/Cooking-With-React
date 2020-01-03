@@ -91,6 +91,6 @@
 @media all and (max-width: 375px){
 	.recipe-edit_ingredient-grid {
 		grid-template-columns:1fr;
-		row-gap: 10px;
+		row-gap: 8px;
 	}
 }
