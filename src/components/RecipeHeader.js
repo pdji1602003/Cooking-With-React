@@ -19,6 +19,7 @@ export default function RecipeHeader(props) {
 					className="recipe--header_input"
 					placeholder="Search for recipes here..."
 					minLength="1"
+					value={searchResult}
 					onChange={(e) => handleSearchRecipe(e)}
 				/>
 			</form>

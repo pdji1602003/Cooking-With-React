@@ -13,7 +13,7 @@ export default function App() {
 	const [recipes, setRecipes] = useState(sampleRecipes)
 	const [selectedRecipeId, setSelectedRecipeId] = useState()
 	const selectedRecipe = recipes.find(recipe => recipe.id === selectedRecipeId)
-	const [searchResult, setSearchResult] = useState([])
+	const [searchResult, setSearchResult] = useState("")
 
 	const recipeContextValue = {
 		handleAddRecipe,
@@ -73,13 +73,7 @@ export default function App() {
 
 	// for searchBar feature
 	function handleSearchRecipe(e){
-		const searchedRecipe = recipes.filter(recipe => {
-			return recipe.name.toLowerCase().search(e.target.value.toLowerCase()) !== -1
-		})
-
-		console.log(searchedRecipe);
-
-		setSearchResult(searchedRecipe)
+		setSearchResult(e.target.value)
 	}
 
 	return (
@@ -91,6 +85,7 @@ export default function App() {
 			<RecipeList
 				recipes={recipes}
 				handleDeleteRecipe={handleDeleteRecipe}
+				searchResult={searchResult}
 			/>
 			{ selectedRecipe && <RecipeEdit recipe={selectedRecipe} />}
 		</RecipeContext.Provider>

@@ -6,12 +6,15 @@ import React, { useContext } from 'react'
 import Recipe from './Recipe'
 import {RecipeContext} from './App'
 
-export default function RecipeList({ recipes }) {
+export default function RecipeList({ recipes, searchResult }) {
 	const { handleAddRecipe } = useContext(RecipeContext)
+	console.log(searchResult);
 
 	return (
 		<div className="recipe-list">
-			{recipes.map(recipe => <Recipe key={recipe.id} {...recipe} />)}
+			{recipes
+				.filter(recipe => recipe.name.toLowerCase().search(searchResult.toLowerCase()) !== -1)
+				.map(recipe => <Recipe key={recipe.id} {...recipe} />)}
 			<div className="recipe-list_add-btn-container">
 				<button 
 					className="btn btn-primary" 
