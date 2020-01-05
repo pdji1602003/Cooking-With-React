@@ -1,6 +1,7 @@
 .recipe--header {
 	position: -webkit-sticky;
 	position: sticky;
+	z-index: 1;
 	top: 0;
 	text-align: center;
 	background-color: rgb(111, 20, 238);
