@@ -1,5 +1,3 @@
-
-
 export const steps = [
 	{
 		id: '0',
