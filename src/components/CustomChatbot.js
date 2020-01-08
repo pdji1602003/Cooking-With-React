@@ -22,8 +22,6 @@ export default function CustomChatbot() {
 		userFontColor: '#4a4a4a',
 	}
 
-	console.dir(Chatbot);
-
 	return (
 		<ThemeProvider theme={theme}>
 			<Chatbot
