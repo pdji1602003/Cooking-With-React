@@ -21,6 +21,8 @@ body {
 	background-color: #FEF2DB;
 }
 
+/* utility classes */
+
 .mr-1 {
 	margin-right: .5rem;
 }
@@ -28,6 +30,13 @@ body {
 .mb-1 {
 	margin-bottom: .5rem;
 }
+
+.isWordWrap {
+	word-break: break-word;
+	word-wrap: normal;
+}
+
+
 
 @media all and (max-width:768px){
 	html {

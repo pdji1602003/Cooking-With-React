@@ -8,7 +8,6 @@ import {RecipeContext} from './App'
 
 export default function RecipeList({ recipes, searchResult }) {
 	const { handleAddRecipe } = useContext(RecipeContext)
-	console.log(searchResult);
 
 	return (
 		<div className="recipe-list">
