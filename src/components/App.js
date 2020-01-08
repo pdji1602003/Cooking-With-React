@@ -4,6 +4,8 @@ import RecipeList from './RecipeList'
 import RecipeEdit from './RecipeEdit'
 import '../css/app.css'
 import uuidv4 from 'uuid/v4'
+import CustomChatbot from './CustomChatbot'
+
 
 const LOCAL_STORAGE_KEY = 'cookingWithReact.recipes'
 
@@ -88,6 +90,7 @@ export default function App() {
 				searchResult={searchResult}
 			/>
 			{ selectedRecipe && <RecipeEdit recipe={selectedRecipe} />}
+			<CustomChatbot/>
 		</RecipeContext.Provider>
 	)
 }
