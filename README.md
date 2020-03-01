@@ -1,4 +1,4 @@
-# 專案介紹
+## 專案介紹
 這是一個基於React所打造的食譜增加Web應用。
 
 透過本應用的實作過程，我主要是想達成以下事情：
@@ -8,7 +8,7 @@
 4. 能夠將該Ｗeb應用與LocalStorage相互結合。
 5. 能夠清楚說明Class Components跟Function Components的具體差異。
 
-# 使用說明
+## 使用說明
 本專案為一React專案，借助[Create React App](https://github.com/facebook/create-react-app)啟動。
 
 ## 常用語法
@@ -19,5 +19,5 @@
 ### `npm run build`
 使用以上語法將壓縮本專案檔案大小，以利將本專案部署到生產環境。
 
-# 影片展示
+## 影片展示
 請參考本影片以獲知此Web應用的各項功能 👉：[VIDEO DEMO](https://www.youtube.com/watch?v=U0CXqrz-Br8)
